@@ -1,9 +1,13 @@
-namespace TikTokAdminDashboard;
-
-public partial class Form1 : Form
+namespace TikTokAdminDashboard
 {
-    public Form1()
+    public partial class Form1 : Form
     {
-        InitializeComponent();
+        public Form1()
+        {
+            InitializeComponent();
+
+            // Show welcome message in console when form loads
+            Console.WriteLine("Welcome to TikTokAdminDashboard!");
+        }
     }
 }
