@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Live Viewers Counter</title>
+<style>
+  body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+  .counter { font-size: 48px; color: #1DA1F2; }
+</style>
+</head>
+<body>
+  <h1>Live Viewers</h1>
+  <div class="counter">1,500,000.5</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live Viewer Count</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding-top: 50px;
+      color: #003366;
+    }
+    .counter {
+      font-size: 4em;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    .label {
+      font-size: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <h1>TikTok Live Viewers</h1>
+  <div class="counter" id="viewerCount">Loading...</div>
+  <div class="label">Viewers Watching Now</div>
+
+  <script>
+    function getRandomViewers() {
+      return Math.floor(Math.random() * 500000) + 1000000; // between 1,000,000 and 1,500,000
+    }
+
+    function updateViewers() {
+      const count = getRandomViewers();
+      document.getElementById('viewerCount').textContent = count.toLocaleString();
+    }
+
+    updateViewers();
+    setInterval(updateViewers, 5000); // update every 5 seconds
+  </script>
+</body>
+</html>
