@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TikTokAdminDashboard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4008d82d6b4cb7eca6d3b2f275337709087a40ec")]
 [assembly: System.Reflection.AssemblyProductAttribute("TikTokAdminDashboard")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TikTokAdminDashboard")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
