@@ -1,0 +1,5 @@
+C:\Users\Lenovo-T440\TikTokAdminDashboard\obj\Debug\net7.0-windows\TikTokAdminDashboard.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo-T440\TikTokAdminDashboard\obj\Debug\net7.0-windows\TikTokAdminDashboard.AssemblyInfoInputs.cache
+C:\Users\Lenovo-T440\TikTokAdminDashboard\obj\Debug\net7.0-windows\TikTokAdminDashboard.AssemblyInfo.cs
+C:\Users\Lenovo-T440\TikTokAdminDashboard\obj\Debug\net7.0-windows\TikTokAdminDashboard.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo-T440\TikTokAdminDashboard\obj\Debug\net7.0-windows\TikTokAdminDashboard.sourcelink.json

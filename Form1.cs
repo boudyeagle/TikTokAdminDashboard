@@ -1,3 +1,6 @@
+using System;
+using System.Windows.Forms;
+
 namespace TikTokAdminDashboard
 {
     public partial class Form1 : Form
@@ -6,8 +9,13 @@ namespace TikTokAdminDashboard
         {
             InitializeComponent();
 
-            // Show welcome message in console when form loads
-            Console.WriteLine("Welcome to TikTokAdminDashboard!");
+            // Show a welcome message on form load
+            this.Load += Form1_Load;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Welcome to TikTokAdminDashboard!");
         }
     }
 }
