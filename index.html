@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Live Viewer Count</title>
+  <title>TikTok Live Viewer Count</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -20,12 +20,52 @@
     }
     .label {
       font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    .username {
+      font-size: 2em;
+      color: #004080;
+      margin-bottom: 10px;
+    }
+    .followers {
+      font-size: 1.3em;
+      color: #0077cc;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
   <h1>TikTok Live Viewers</h1>
-  <div class="counter" id="viewerCount">1,500</div>
+  <div class="username">@boudy009</div>
+  <div class="counter" id="viewerCount">0</div>
   <div class="label">Viewers Watching Now</div>
+  <div class="followers" id="autoFollowers">Auto-followers: 0</div>
+
+  <script>
+    const viewerCountEl = document.getElementById('viewerCount');
+    const autoFollowersEl = document.getElementById('autoFollowers');
+
+    let currentViewers = 0;
+    const maxViewers = 1500;
+
+    // دالة لتوليد عدد المتابعين الوهميين (10% من المشاهدين مع تقريب)
+    function getAutoFollowers(viewers) {
+      return Math.floor(viewers * 0.1);
+    }
+
+    // زيادة عدد المشاهدين تدريجياً حتى يوصل 1500
+    const interval = setInterval(() => {
+      if (currentViewers < maxViewers) {
+        currentViewers += 10; // تقدر تعدل السرعة هون
+        if (currentViewers > maxViewers) currentViewers = maxViewers;
+
+        viewerCountEl.textContent = currentViewers.toLocaleString();
+        autoFollowersEl.textContent = `Auto-followers: ${getAutoFollowers(currentViewers).toLocaleString()}`;
+      } else {
+        clearInterval(interval);
+      }
+    }, 100); // كل 100 مللي ثانية
+
+  </script>
 </body>
 </html>
