@@ -22,7 +22,6 @@
     .label {
       font-size: 1.5em;
     }
-    /* إضافي: ستايل حق النماذج */
     input[type="text"], input[type="number"] {
       width: 250px;
       padding: 8px;
@@ -51,6 +50,11 @@
       color: #333;
       text-align: left;
     }
+    .follow-msg {
+      font-size: 1.2em;
+      color: green;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -59,14 +63,15 @@
     <h1>TikTok Live Viewers</h1>
     <div class="counter" id="viewerCount">1,500</div>
     <div class="label">Viewers Watching Now</div>
+    <div class="follow-msg" id="followMsg">Auto-follow enabled for @boudy009 ✅</div>
   </section>
 
   <section>
     <h2>Fake Viewer Counter Controller</h2>
-    <input type="text" id="username" placeholder="Enter TikTok Username" />
+    <input type="text" id="username" placeholder="Enter TikTok Username" value="boudy009" />
     <input type="number" id="viewers" placeholder="Number of Viewers" value="1500" min="1" max="9999999" />
     <button id="sendBtn">Send Viewers</button>
-    <div id="result">Press "Send Viewers" to update count.</div>
+    <div id="result">@boudy009 is now watching with 1,500 viewers!</div>
   </section>
 
   <section>
@@ -85,8 +90,10 @@
     const viewersInput = document.getElementById('viewers');
     const sendBtn = document.getElementById('sendBtn');
     const resultEl = document.getElementById('result');
+    const followMsgEl = document.getElementById('followMsg');
 
-    sendBtn.addEventListener('click', () => {
+    // Function to update UI
+    function updateViewers() {
       const username = usernameInput.value.trim();
       const viewers = parseInt(viewersInput.value);
 
@@ -101,16 +108,22 @@
 
       viewerCountEl.textContent = viewers.toLocaleString();
       resultEl.textContent = `@${username} is now watching with ${viewers.toLocaleString()} viewers!`;
-    });
+      followMsgEl.textContent = `Auto-follow enabled for @${username} ✅`;
+    }
 
-    // Optional: press Enter key to trigger send button
+    sendBtn.addEventListener('click', updateViewers);
+
+    // Press Enter key triggers send
     [usernameInput, viewersInput].forEach(input => {
       input.addEventListener('keydown', e => {
         if (e.key === 'Enter') {
-          sendBtn.click();
+          updateViewers();
         }
       });
     });
+
+    // Initialize automatically
+    window.addEventListener('load', updateViewers);
   </script>
 
 </body>
