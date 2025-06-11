@@ -13,7 +13,7 @@ namespace TikTokAdminDashboard
         {
             InitializeComponent();
             SetupFormUI();
-            this.KeyPreview = true; // Allow form to capture key presses
+            this.KeyPreview = true;
             this.KeyDown += Form1_KeyDown;
         }
 
@@ -24,7 +24,6 @@ namespace TikTokAdminDashboard
 
         private void SetupFormUI()
         {
-            // Username field
             txtUsername = new TextBox
             {
                 PlaceholderText = "Enter TikTok Username",
@@ -34,7 +33,6 @@ namespace TikTokAdminDashboard
             };
             this.Controls.Add(txtUsername);
 
-            // Viewers field
             numViewers = new NumericUpDown
             {
                 Minimum = 1,
@@ -46,7 +44,6 @@ namespace TikTokAdminDashboard
             };
             this.Controls.Add(numViewers);
 
-            // Result label
             lblResult = new Label
             {
                 AutoSize = true,
