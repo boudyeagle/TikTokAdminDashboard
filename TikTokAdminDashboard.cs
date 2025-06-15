@@ -8,10 +8,21 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #f2f2f2;
+      color: #003366;
       text-align: center;
       padding-top: 50px;
-      color: #003366;
       direction: ltr;
+    }
+    section {
+      margin: 40px auto;
+      max-width: 600px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #004080;
     }
     .counter {
       font-size: 4em;
@@ -22,11 +33,31 @@
     .label {
       font-size: 1.5em;
     }
+    .follow-msg {
+      font-size: 1.2em;
+      color: green;
+      margin-top: 10px;
+    }
     input[type="text"], input[type="number"] {
       width: 250px;
       padding: 8px;
       margin: 10px 0;
       font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #1DA1F2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #007acc;
     }
     #result {
       margin-top: 30px;
@@ -34,26 +65,10 @@
       color: darkblue;
       font-weight: bold;
     }
-    h1, h2 {
-      color: #004080;
-    }
-    section {
-      margin: 40px auto;
-      max-width: 600px;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
     p {
       font-size: 1.1em;
       color: #333;
       text-align: left;
-    }
-    .follow-msg {
-      font-size: 1.2em;
-      color: green;
-      margin-top: 10px;
     }
   </style>
 </head>
@@ -92,15 +107,15 @@
     const resultEl = document.getElementById('result');
     const followMsgEl = document.getElementById('followMsg');
 
-    // Function to update UI
     function updateViewers() {
       const username = usernameInput.value.trim();
-      const viewers = parseInt(viewersInput.value);
+      const viewers = parseInt(viewersInput.value, 10);
 
       if (!username) {
         alert('Please enter a TikTok username.');
         return;
       }
+
       if (!viewers || viewers < 1) {
         alert('Please enter a valid number of viewers.');
         return;
@@ -113,16 +128,12 @@
 
     sendBtn.addEventListener('click', updateViewers);
 
-    // Press Enter key triggers send
     [usernameInput, viewersInput].forEach(input => {
       input.addEventListener('keydown', e => {
-        if (e.key === 'Enter') {
-          updateViewers();
-        }
+        if (e.key === 'Enter') updateViewers();
       });
     });
 
-    // Initialize automatically
     window.addEventListener('load', updateViewers);
   </script>
 

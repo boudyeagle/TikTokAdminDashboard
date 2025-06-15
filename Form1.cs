@@ -5,9 +5,9 @@ namespace TikTokAdminDashboard
 {
     public partial class Form1 : Form
     {
-        TextBox txtUsername;
-        NumericUpDown numViewers;
-        Label lblResult;
+        private TextBox txtUsername;
+        private NumericUpDown numViewers;
+        private Label lblResult;
 
         public Form1()
         {
